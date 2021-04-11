@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style_page.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <aside id="non-printable"
+        class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-light sidenav-active-square">
+        <div class="brand-sidebar">
+            <h1 class="logo-wrapper">
+                <a class="brand-logo darken-1" href="index.html">
+                    <img class="hide-on-med-and-down" src="../../../app-assets/images/logo/materialize-logo-color.png"
+                        alt="Logo" /><img class="show-on-medium-and-down hide-on-med-and-up"
+                        src="../../../app-assets/images/logo/materialize-logo.png" alt="materialize logo" /></a>
+            </h1>
+        </div>
+        <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out"
+            data-menu="menu-navigation" data-collapsible="menu-accordion">
+            <li class="bold"><a class="waves-effect waves-cyan" href="app-email.html"><i
+                        class="material-icons">settings_input_svideo</i><span class="menu-title"
+                        data-i18n="Mail">Dashboard</span></a>
+            </li>
+            <li class="navigation-header"><a class="navigation-header-text">Элементы</a><i
+                    class="navigation-header-icon material-icons">more_horiz</i>
+            </li>
+
+            <li class="bold"><a class="waves-effect waves-cyan " href="JavaScript:add_element('text_box')"><i
+                        class="material-icons">text_format</i><span class="menu-title" data-i18n="Chat">Текстовое
+                        поле</span></a>
+            </li>
+            <li class="bold"><a class="waves-effect waves-cyan " href="JavaScript:add_element('box')"><i
+                        class="material-icons">broken_image</i><span class="menu-title"
+                        data-i18n="ToDo">Изображение</span></a>
+            </li>
+
+
+            <li class="navigation-header"><a class="navigation-header-text">Вывод </a><i
+                    class="navigation-header-icon material-icons">more_horiz</i>
+            </li>
+            <li class="bold"><a class="waves-effect waves-cyan " href="user-profile-page.html"><i
+                        class="material-icons">miscellaneous_services</i><span class="menu-title"
+                        data-i18n="User Profile">Настройки вывода</span></a>
+            </li>
+            <li class="bold"><a class="waves-effect waves-cyan " href="JavaScript:prin_page()"><i
+                        class="material-icons">print</i><span class="menu-title" data-i18n="User Profile">Просмотр и
+                        печать</span></a>
+            </li>
+
+
+
+            <li class="navigation-header"><a class="navigation-header-text">MISC </a><i
+                    class="navigation-header-icon material-icons">more_horiz</i>
+            </li>
+            <li class="bold"><a class="waves-effect waves-cyan "
+                    href="https://pixinvent.com/materialize-material-design-admin-template/documentation/index.html"
+                    target="_blank"><i class="material-icons">import_contacts</i><span class="menu-title"
+                        data-i18n="Documentation">Документация</span></a>
+            </li>
+            <li class="bold"><a class="waves-effect waves-cyan " href="https://pixinvent.ticksy.com/" target="_blank"><i
+                        class="material-icons">help_outline</i><span class="menu-title"
+                        data-i18n="Support">Поддержка</span></a>
+            </li>
+        </ul>
+        <div class="navigation-background"></div><a
+            class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only"
+            href="#" data-target="slide-out"><i class="material-icons">menu</i></a>
+    </aside>
+
+
+    <div id="main">
+        <div id="printable">
+            <div class="book">
+                <div class="page">
+                    <div class="subpage" id="page-one">Page 1
+                        <div draggable class="resizable" id="mydiv">
+                            <div id="mydivheader">Click here to move</div>
+                            <p>Move</p>
+                            <p>this</p>
+                            <p>DIV</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="page">
+                        <div class="subpage">Page 2/2</div>    
+                    </div> -->
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    M.AutoInit();
+    dragElement(document.getElementById("mydiv"));
+
+    function dragElement(elmnt) {
+        var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+        if (document.getElementById(elmnt.id + "header")) {
+            // if present, the header is where you move the DIV from:
+            document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        } else {
+            // otherwise, move the DIV from anywhere inside the DIV:
+            elmnt.onmousedown = dragMouseDown;
+        }
+
+        function dragMouseDown(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // get the mouse cursor position at startup:
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            document.onmouseup = closeDragElement;
+            // call a function whenever the cursor moves:
+            document.onmousemove = elementDrag;
+        }
+
+        function elementDrag(e) {
+            e = e || window.event;
+            e.preventDefault();
+            // calculate the new cursor position:
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+            // set the element's new position:
+            elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+            elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        }
+
+        function closeDragElement() {
+            // stop moving when mouse button is released:
+            document.onmouseup = null;
+            document.onmousemove = null;
+        }
+    }
+
+    function add_element(type_elem){
+        if (type_elem == "text_box"){
+            console.log("hi");
+            document.getElementById("page-one").innerHTML  += "<div draggable id=\"element1\"><h5 class=\"left-align\">Введите текст</h5></div>";
+            dragElement(document.getElementById("element1"));
+            dragElement(document.getElementById("mydiv"));
+        }
+        else {
+            document.getElementById("page-one").innerHTML  += "<div draggable class=\"resizable\" id=\"mydiv2\"><div id=\"mydivheader\">Click here to move</div><p>Move</p><p>this</p><p>DIV</p></div>"
+            dragElement(document.getElementById("mydiv2"));
+            // dragElement(document.getElementById("mydiv"));
+        }
+    }
+
+
+
+    function prin_page() {
+        window.print();
+    }
+</script>
+
+</html>

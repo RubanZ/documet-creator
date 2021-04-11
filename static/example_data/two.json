@@ -1,0 +1,26 @@
+[
+    [
+        {
+            "id": 1,
+            "type": 1,
+            "x": 197,
+            "y": 62,
+            "sortorder": 1,
+            "backgroundColor": {
+                "r": 55,
+                "g": 214,
+                "b": 122,
+                "a": 1
+            },
+            "text": "Пивет"
+        },
+        {
+            "id": 2,
+            "type": 0,
+            "x": 75,
+            "y": 283,
+            "sortorder": 2,
+            "img": "https://wikiway.com/upload/iblock/edd/Oslo.jpg"
+        }
+    ]
+]

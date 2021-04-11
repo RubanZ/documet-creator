@@ -1,0 +1,41 @@
+[
+    [
+        {
+            "id": 1,
+            "type": 1,
+            "height": 211,
+            "width": 421,
+            "x": 48,
+            "y": 235,
+            "sortorder": 1,
+            "backgroundColor": {
+                "r": 55,
+                "g": 214,
+                "b": 122,
+                "a": 1
+            },
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quisnostrud exercitation ullamco laboris nisiut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit involuptate velit esse cillum dolore eufugiat nulla pariatur. Excepteur sintoccaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim idest laborum",
+            "textStyle": {
+                "color": {
+                    "r": 55,
+                    "g": 55,
+                    "b": 55
+                },
+                "font": "Tahoma",
+                "align": "Left",
+                "style": ["Bold", "Italic", "Underline"]
+            }
+        },
+        {
+            "id": 2,
+            "type": 0,
+            "height": 300,
+            "width": 504,
+            "x": 71,
+            "y": 494,
+            "sortorder": 2,
+            "img": "https://wikiway.com/upload/iblock/edd/Oslo.jpg",
+            
+        }
+    ]
+]
